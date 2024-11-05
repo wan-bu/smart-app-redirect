@@ -13,9 +13,6 @@
                 window.location.href = "https://play.google.com/store/apps/details?id=sl.gov.nra.sdas&hl=en";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 window.location.href = "https://apps.apple.com/us/app/nra-smart-act/id6642708023";
-            } else {
-                // Optional: Redirect to a generic page for unsupported devices
-                document.body.innerHTML = "<h1>Unsupported device</h1>";
             }
         };
     </script>
