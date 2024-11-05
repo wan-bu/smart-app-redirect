@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Redirect</title>
+    <script>
+        // Device-based redirect
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=sl.gov.nra.sdas&hl=en";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/us/app/nra-smart-act/id6642708023";
+            } else {
+                // Optional: Redirect to a generic page for unsupported devices
+                document.body.innerHTML = "<h1>Unsupported device</h1>";
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <p>If you're not redirected, please click the link for your device.</p>
+    <ul>
+        <li><a href="https://play.google.com/store/apps/details?id=sl.gov.nra.sdas&hl=en">Android App</a></li>
+        <li><a href="https://apps.apple.com/us/app/nra-smart-act/id6642708023">iOS App</a></li>
+    </ul>
+</body>
+</html>
